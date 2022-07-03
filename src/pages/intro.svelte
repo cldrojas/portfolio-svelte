@@ -29,7 +29,7 @@
         </a>
       </li>
     </ul>
-    <h4>Lets work together, here you cand find me</h4>
+    <h4>Lets work together, you can contact me here</h4>
   </div>
   <picture>
     <img src={hero} alt="Daniel Rojas" />
@@ -51,12 +51,15 @@
     color: var(--text);
     display: flex;
     height: 100vh;
+    max-width: 650px;
     flex-direction: column;
+    align-items: center;
     padding-top: 20%;
     line-height: 1.5;
   }
   .header {
-    margin-left: 24px;
+    /* margin-left: 24px; */
+    margin: 0 auto;
   }
   .header > h2 {
     font-size: 2.3rem;
@@ -70,16 +73,17 @@
     display: flex;
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;
     justify-content: center;
     align-items: center;
   }
   picture > img {
     width: 100%;
-    position: relative;
+    /* position: static; */
   }
   .social {
     margin-top: 2.5em;
+    padding: 0 16px;
   }
   .social ul {
     display: flex;
