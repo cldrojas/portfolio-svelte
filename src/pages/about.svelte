@@ -42,7 +42,8 @@
 
 <style>
   .about {
-    padding: 0 24px;
+    padding: 16px 24px;
+    height: 100vh;
     background-color: var(--darkBackground);
     color: var(--text);
   }
@@ -65,7 +66,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     margin: 16px 0;
   }
 </style>

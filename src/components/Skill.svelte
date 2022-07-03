@@ -17,30 +17,35 @@
     display: flex;
     flex-direction: column;
     background-color: var(--background);
-    border-radius: 10px;
-    margin: 8px 0;
-    padding: 16px 24px;
-  }
-  .skill-details {
-    display: flex;
-    align-items: center;
+    margin: 8px 4px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 16px 8px;
   }
 
   .skill:nth-child(even) .skill-details {
     flex-direction: row-reverse;
   }
 
+  .skill-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 8px 0;
+  }
+
   .skill-title {
     font-size: 1.2rem;
     font-weight: 700;
+    margin-left: 16px;
   }
 
   .skill-description {
-    width: 30ch;
+    max-width: 23ch;
   }
 
   .skill img {
     height: 60px;
-    margin-top: 16px;
+    width: 60px;
   }
 </style>
