@@ -1,5 +1,6 @@
 {
-  "name": "portfolio_cld",
+  "name": "portfolio",
+  "homepage": "cldrojas.github.io/portfolio-svelte",
   "private": true,
   "version": "0.0.0",
   "type": "module",
