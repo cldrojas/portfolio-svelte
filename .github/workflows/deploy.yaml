@@ -1,4 +1,5 @@
 name: Deploy CI pipeline
+
 on:
   push:
     branches: [master]
@@ -14,25 +15,25 @@ jobs:
       - name: Cancel redundant builds
         uses: styfle/cancel-workflow-action@0.9.1
         with: 
-          access_token: ${{github.token}}
+          access_token: ${{ github.token }}
 
-  # lint:
-  #   runs-on: ubuntu-18.04
-  #   steps:    
-  #     - uses: actions/checkout@v3
-  #       with:
-  #         fetch-depth: 0
-  #     - uses: actions/setup-node@v3
-  #       with:
-  #         node-version: '16'
-  #         cache: 'yarn'
-  #     - name: Install depenencies
-  #       run: yarn install
-  #     - name: Lint code
-  #       run: yarn lint
+  lint:
+    runs-on: ubuntu-18.04
+    steps:    
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'yarn'
+      - name: Install depenencies
+        run: yarn install
+      - name: Lint code
+        run: yarn lint
 
   deploy:
-    # needs: lint
+    needs: lint
     runs-on: ubuntu-18.04
     steps:    
       - uses: actions/checkout@v3
@@ -49,6 +50,7 @@ jobs:
       - name: Add domain
         run: cd dist && echo 'cldrojas.com' > CNAME
       - name: Deploy 🚀
+        if: ${{ github.event_name }} == 'push'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
