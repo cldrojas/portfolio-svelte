@@ -43,7 +43,7 @@
 <style>
   .about {
     padding: 16px 24px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--darkBackground);
     color: var(--text);
   }
