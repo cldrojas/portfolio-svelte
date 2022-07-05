@@ -11,6 +11,7 @@
   --light: #364c61;
   --darkBackground: #1d2025;
   --background: #102a43;
+  --link: #61dafb;
 }
 
 body {
@@ -32,7 +33,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #61dafb;
+  color: var(--link);
 }
 
 code {
