@@ -5,13 +5,18 @@
 <section class="projects">
   <h2 class="title">Projects</h2>
   <Project
-    name="To-DO List"
+    name="To-Do List"
+    description="This is my first project using svelte, i loved svelte's syntax and architecture"
     imgUrl="src/assets/projects/todo.png"
+    logoUrl="src/assets/projects/todo_logo.png"
     previewUrl="https://cldrojas.github.io/todo"
-    repoUrl="github.com/cldrojas/todo"
+    repoUrl="https://github.com/cldrojas/todo"
     technologies={[
       "html",
       "css",
+      "php",
+      "vanilla",
+      "porno",
       "javascript",
       "svelte",
       "github-pages",

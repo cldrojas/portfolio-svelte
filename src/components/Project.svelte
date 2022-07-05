@@ -1,23 +1,33 @@
 <script>
-  export let name, imgUrl, previewUrl, repoUrl, technologies;
+  export let name,
+    description,
+    imgUrl,
+    logoUrl,
+    previewUrl,
+    repoUrl,
+    technologies;
 </script>
 
 <article class="project">
   <img class="image" src={imgUrl} alt={name} />
 
-  <div class="details">
-    <div class="title">{name}</div>
+  <div class="wrapper">
+    <div class="details">
+      <img class="logo" src={logoUrl} alt={`${name}-logo`} />
+      <h3 class="title">{name}</h3>
+      <p class="description">{description}</p>
+      <div class="links">
+        <a href={previewUrl} class="link">Preview App</a>
+        <a href={repoUrl} class="link">Source Code</a>
+      </div>
 
-    <div class="links">
-      <a href={previewUrl} class="button">Preview</a>
-      <a href={repoUrl} class="button">Source Code</a>
+      <ul class="technologies">
+        <li class="tech" />
+        {#each technologies as tech}
+          <li class="tech">{tech}</li>
+        {/each}
+      </ul>
     </div>
-
-    <ul class="technologies">
-      {#each technologies as tech}
-        <li class="tech">{tech}</li>
-      {/each}
-    </ul>
   </div>
 </article>
 
@@ -27,39 +37,66 @@
     flex-direction: column;
     position: relative;
     border-radius: 10px;
-    border: solid 1px red;
+    max-width: 400px;
   }
   .image {
     width: 100%;
     position: static;
     top: 0;
   }
+  .wrapper {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    position: absolute;
+  }
+  .logo {
+    position: absolute;
+    top: 2em;
+    width: 4em;
+    height: 4em;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: var(--darkBackground);
+  }
+  .wrapper:hover .details {
+    opacity: 1;
+    padding: 40px;
+  }
   .details {
     display: flex;
     flex-direction: column;
-    background: rgba(13, 33, 80, 0.483);
+    justify-content: space-around;
     height: 100%;
     width: 100%;
+    transition: all ease 0.3s;
     position: absolute;
-    z-index: 2;
+    background-color: #102a43d7;
+    opacity: 0;
   }
   .title {
-    background-color: rgba(1, 84, 84, 0.428);
-    position: absolute;
-    bottom: 5rem;
-    display: flex;
-    width: 100%;
-    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  .description {
+    font-weight: 400;
   }
   .links {
-    border: solid 1px green;
     display: flex;
     justify-content: space-around;
+  }
+  .link {
+    border: solid 1px var(--link);
+    padding: 8px;
+    border-radius: 4px;
   }
   .technologies {
     display: flex;
   }
   .tech {
-    padding: 4px;
+    display: inline;
+    min-width: fit-content;
   }
 </style>
