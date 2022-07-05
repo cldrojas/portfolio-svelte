@@ -16,17 +16,18 @@
       <img class="logo" src={logoUrl} alt={`${name}-logo`} />
       <h3 class="title">{name}</h3>
       <p class="description">{description}</p>
-      <div class="links">
-        <a href={previewUrl} class="link">Preview App</a>
-        <a href={repoUrl} class="link">Source Code</a>
-      </div>
 
       <ul class="technologies">
-        <li class="tech" />
+        <li class="tech first">Technologies:</li>
         {#each technologies as tech}
           <li class="tech">{tech}</li>
         {/each}
       </ul>
+
+      <div class="links">
+        <a href={previewUrl} class="link">Preview App</a>
+        <a href={repoUrl} class="link">Source Code</a>
+      </div>
     </div>
   </div>
 </article>
@@ -38,9 +39,11 @@
     position: relative;
     border-radius: 10px;
     max-width: 400px;
+    min-height: 310px;
   }
   .image {
     width: 100%;
+    height: 100%;
     position: static;
     top: 0;
   }
@@ -56,7 +59,7 @@
     top: 2em;
     width: 4em;
     height: 4em;
-    padding: 16px;
+    padding: 1em;
     border-radius: 10px;
     background-color: var(--darkBackground);
   }
@@ -72,7 +75,7 @@
     width: 100%;
     transition: all ease 0.3s;
     position: absolute;
-    background-color: #102a43d7;
+    background-color: #102a43ea;
     opacity: 0;
   }
   .title {
@@ -81,7 +84,7 @@
     font-size: 1.2rem;
   }
   .description {
-    font-weight: 400;
+    font-weight: 500;
   }
   .links {
     display: flex;
@@ -94,9 +97,13 @@
   }
   .technologies {
     display: flex;
+    flex-wrap: wrap;
+  }
+  .first {
+    font-weight: 700;
   }
   .tech {
-    display: inline;
-    min-width: fit-content;
+    font-size: small;
+    padding: 0 4px;
   }
 </style>
