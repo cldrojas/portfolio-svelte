@@ -12,7 +12,7 @@
       <header>
         <p>Hi there! 👋 I am</p>
         <h1>Daniel Rojas</h1>
-        <h2>Frontend Developer, coffee lover and cannabis breeder</h2>
+        <h2>Frontend Developer, coffee lover and cannabis grower</h2>
         <ul class="links">
           <li>
             <a

@@ -6,11 +6,8 @@
 </script>
 
 <main>
-  <!-- <TopBar /> TODO: add responsive navbar -->
+  <!-- <TopBar /> -->
   <Intro />
-  <About />
   <Projects />
+  <About />
 </main>
-
-<style>
-</style>

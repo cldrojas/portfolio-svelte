@@ -51,7 +51,7 @@ code {
   width: 100%;
   max-width: 1024px;
   min-width: 390px;
-  padding: 0 2rem;
+  padding: 2rem;
   /* border: solid 1px red; */
   display: flex;
   flex-direction: column;
