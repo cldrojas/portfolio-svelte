@@ -5,43 +5,37 @@
 </script>
 
 <article class="skill">
-  <h3 class="skill-title">{title}</h3>
   <div class="skill-details">
-    <p class="skill-description">{description}</p>
     <img src={imgUrl} alt={title} />
+    <h3 class="skill-title">{title}</h3>
+    <p class="skill-description">{description}</p>
   </div>
 </article>
 
 <style>
   .skill {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--background);
-    margin: 8px 4px;
-    width: 100%;
     border-radius: 8px;
-    padding: 16px 8px;
-  }
-
-  .skill:nth-child(even) .skill-details {
-    flex-direction: row-reverse;
+    display: flex;
+    background-color: var(--background);
+    justify-content: center;
   }
 
   .skill-details {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    padding: 8px 0;
+    padding: 16px;
   }
 
   .skill-title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    margin-left: 16px;
+    text-align: center;
   }
 
   .skill-description {
-    max-width: 23ch;
+    text-align: center;
+    padding: 8px;
   }
 
   .skill img {
