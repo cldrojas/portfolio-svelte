@@ -1,6 +1,6 @@
 <script>
   import github from "../assets/social/github.svg";
-  import twitter from "../assets/social/twitter.svg";
+  import twitter from "../assets/social/bird.svg";
   import mail from "../assets/social/mail.svg";
   import linkedin from "../assets/social/llinkedin.svg";
   import next from "../assets/nextArrow.svg";
