@@ -88,13 +88,6 @@
     object-fit: cover;
   }
 
-  h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    margin: 16px 0;
-  }
-
   h3 {
     text-align: center;
     font-size: 1.5rem;
