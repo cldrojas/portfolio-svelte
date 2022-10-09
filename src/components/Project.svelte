@@ -1,33 +1,30 @@
 <script>
-  export let name,
-    description,
-    imgUrl,
-    logoUrl,
-    previewUrl,
-    repoUrl,
-    technologies;
+  export let name, description, imgUrl, logoUrl, previewUrl, repoUrl;
+  // technologies;
 </script>
 
 <article class="project">
   <img class="image" src={imgUrl} alt={name} />
 
-  <div class="wrapper">
+  <div class="overlay">
     <div class="details">
-      <img class="logo" src={logoUrl} alt={`${name}-logo`} />
-      <h3 class="title">{name}</h3>
+      <header>
+        <img class="logo" src={logoUrl} alt={`${name}-logo`} />
+        <h3>{name}</h3>
+      </header>
       <p class="description">{description}</p>
 
-      <ul class="technologies">
+      <!-- <ul class="technologies">
         <li class="tech first">Technologies:</li>
         {#each technologies as tech}
           <li class="tech">{tech}</li>
         {/each}
-      </ul>
+      </ul> -->
 
-      <div class="links">
+      <ul class="links">
         <a href={previewUrl} class="link">Preview App</a>
         <a href={repoUrl} class="link">Source Code</a>
-      </div>
+      </ul>
     </div>
   </div>
 </article>
@@ -35,75 +32,74 @@
 <style>
   .project {
     display: flex;
-    flex-direction: column;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    /* border: solid 1px red; */
     position: relative;
-    border-radius: 10px;
-    max-width: 400px;
-    min-height: 310px;
+    overflow: hidden;
+    text-align: center;
   }
-  .image {
+
+  .overlay {
+    position: absolute;
+    background-color: var(--darkBlueGradient);
+    transition: ease-in-out 0.25s;
     width: 100%;
     height: 100%;
-    position: static;
-    top: 0;
-  }
-  .wrapper {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    place-items: center;
-    position: absolute;
-  }
-  .logo {
-    position: absolute;
-    top: 2em;
-    width: 4em;
-    height: 4em;
-    padding: 1em;
-    border-radius: 10px;
-    background-color: var(--darkBackground);
-  }
-  .wrapper:hover .details {
-    opacity: 1;
-    padding: 40px;
-  }
-  .details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
-    transition: all ease 0.3s;
-    position: absolute;
-    background-color: #102a43ea;
+    /* top: 100%; */
     opacity: 0;
   }
-  .title {
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.2rem;
+
+  .project:hover .overlay {
+    /* border: solid 1pc blue; */
+    top: 0;
+    opacity: 1;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    /* border: solid 1px blue; */
   }
   .description {
+    /* border: solid 1px red; */
+    padding: 1rem 0;
     font-weight: 500;
   }
-  .links {
+  .logo {
+    height: 35px;
+    width: 35px;
+    object-fit: contain;
+  }
+  .details {
+    /* border: solid 1px red; */
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 1rem;
   }
-  .link {
-    border: solid 1px var(--link);
-    padding: 8px;
-    border-radius: 4px;
-  }
-  .technologies {
+  ul {
     display: flex;
     flex-wrap: wrap;
   }
-  .first {
-    font-weight: 700;
+  .links {
+    padding: 1rem 0;
+    justify-content: space-around;
   }
-  .tech {
-    font-size: small;
-    padding: 0 4px;
+  .link {
+    line-height: 1.3;
+    border: solid 1px transparent;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    transition: border 0.3s;
+  }
+
+  .link:hover {
+    border: solid 1px white;
   }
 </style>
