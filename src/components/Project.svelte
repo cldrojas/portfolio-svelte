@@ -1,10 +1,18 @@
 <script>
-  export let name, description, imgUrl, logoUrl, previewUrl, repoUrl;
-  // technologies;
+  export let name,
+    description,
+    imgDesktop,
+    imgMobile,
+    logoUrl,
+    previewUrl,
+    repoUrl;
 </script>
 
 <article class="project">
-  <img class="image" src={imgUrl} alt={name} />
+  <picture>
+    <source media="(min-width: 860px)" srcset={imgDesktop} />
+    <img class="image" src={imgMobile} alt={name} />
+  </picture>
 
   <div class="overlay">
     <div class="details">
@@ -12,18 +20,21 @@
         <img class="logo" src={logoUrl} alt={`${name}-logo`} />
         <h3>{name}</h3>
       </header>
-      <p class="description">{description}</p>
-
-      <!-- <ul class="technologies">
-        <li class="tech first">Technologies:</li>
-        {#each technologies as tech}
-          <li class="tech">{tech}</li>
-        {/each}
-      </ul> -->
+      <h4 class="description">{description}</h4>
 
       <ul class="links">
-        <a href={previewUrl} class="link">Preview App</a>
-        <a href={repoUrl} class="link">Source Code</a>
+        <a
+          href={previewUrl}
+          target="__blank"
+          rel="noopener noreferrer"
+          class="link">Preview App</a
+        >
+        <a
+          href={repoUrl}
+          target="__blank"
+          rel="noopener noreferrer"
+          class="link">Source Code</a
+        >
       </ul>
     </div>
   </div>
@@ -34,7 +45,7 @@
     display: flex;
     border-radius: 8px;
     width: 100%;
-    height: 100%;
+    min-height: 13rem;
     /* border: solid 1px red; */
     position: relative;
     overflow: hidden;
@@ -47,12 +58,14 @@
     transition: ease-in-out 0.25s;
     width: 100%;
     height: 100%;
-    /* top: 100%; */
+    top: 100%;
     opacity: 0;
+    visibility: hidden;
   }
 
   .project:hover .overlay {
     /* border: solid 1pc blue; */
+    visibility: visible;
     top: 0;
     opacity: 1;
   }
@@ -65,9 +78,17 @@
     padding: 1rem;
     /* border: solid 1px blue; */
   }
+  picture {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  .image {
+    height: 100%;
+    width: 100%;
+  }
   .description {
     /* border: solid 1px red; */
-    padding: 1rem 0;
     font-weight: 500;
   }
   .logo {
@@ -97,9 +118,10 @@
     border-radius: 0.3rem;
     padding: 0.5rem;
     transition: border 0.3s;
+    border: solid 1px #5a5a5a9e;
   }
 
   .link:hover {
-    border: solid 1px white;
+    border: solid 1px whitesmoke;
   }
 </style>
