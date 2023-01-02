@@ -19,7 +19,6 @@ import rickMobile from '../assets/projects/mobile/rick.png';
 import rickLogo from '../assets/projects/logo/rick.png';
 
 const projects = [
-
   {
     name: 'React todo',
     description: 'React intro course',
