@@ -86,6 +86,7 @@
   .image {
     height: 100%;
     width: 100%;
+    aspect-ratio: cover;
   }
   .description {
     /* border: solid 1px red; */
